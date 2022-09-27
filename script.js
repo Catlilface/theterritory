@@ -5,12 +5,13 @@ var ids = []
 var id = 1
 
 function updateCash() {
+	let sale = document.getElementById('sale-amount')
 	let sumA = 0
 	let sumB = 0
 	for (e of document.getElementsByTagName('input')) {
-		if (e.checked) {
+		if (e.checked && (e.name != 'sale')) {
 			e.checked = false
-			cash.push(parseInt(e.value))
+			cash.push(Math.round((sale) ? parseInt(e.value) * (1 - sale.value / 100) : parseInt(e.value)))
 			list.push(id + ') ' + e.id + ' ' + e.value + 'Н')
 			id++
 		}
@@ -23,16 +24,18 @@ function updateCash() {
 		sumB += p
 	}
 	document.getElementById('overall').innerHTML = sumA + sumB + '₽'
+	sale.value = null
 	callList()
 }
 
 function updateDebet() {
+	let sale = document.getElementById('sale-amount')
 	let sumA = 0
 	let sumB = 0
 	for (e of document.getElementsByTagName('input')) {
-		if (e.checked) {
+		if (e.checked && (e.name != 'sale')) {
 			e.checked = false
-			debet.push(parseInt(e.value))
+			debet.push(Math.round((sale) ? parseInt(e.value) * (1 - sale.value / 100) : parseInt(e.value)))
 			list.push(id + ') ' + e.id + ' ' + e.value + 'Б')
 			id++
 		}
@@ -45,6 +48,7 @@ function updateDebet() {
 		sumB += p
 	}
 	document.getElementById('overall').innerHTML = sumA + sumB + '₽'
+	sale.value = null
 	callList()
 }
 
