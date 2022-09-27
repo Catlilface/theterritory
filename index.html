@@ -6,6 +6,7 @@
 	<title>The Территория | кассовый калькулятор</title>
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	<script type="text/javascript" src="script.js"></script>
+	<script src="https://code.iconify.design/iconify-icon/1.0.0/iconify-icon.min.js"></script>
 </head>
 <body>
 <div class="wrapper">
@@ -86,39 +87,39 @@
 		<div class="goods">
 			<label for="sandwich" class="good">
 				<input type="checkbox" name="coffee" id="sandwich" value="290">
-				<span>Ева / Сэндвич</span>
+				<span>Сэндвич</span>
 			</label>
 			<label for="roll-losos" class="good">
 				<input type="checkbox" name="coffee" id="roll-losos" value="280">
-				<span>Ева / Ролл Лосось</span>
+				<span>Ролл Лосось</span>
 			</label>
 			<label for="poke-chicken" class="good">
 				<input type="checkbox" name="coffee" id="poke-chicken" value="280">
-				<span>Ева / Поке Курица</span>
+				<span>Поке Курица</span>
 			</label>
 			<label for="poke-losos" class="good">
 				<input type="checkbox" name="coffee" id="poke-losos" value="290">
-				<span>Ева / Поке Лосось</span>
+				<span>Поке Лосось</span>
 			</label>
 			<label for="pancakes" class="good">
 				<input type="checkbox" name="coffee" id="pancakes" value="220">
-				<span>Ева / Блины</span>
+				<span>Блины</span>
 			</label>
 			<label for="salad-tuna" class="good">
 				<input type="checkbox" name="coffee" id="salad-tuna" value="280">
-				<span>Ева / Салат с тунцом</span>
+				<span>Салат с тунцом</span>
 			</label>
 			<label for="caesar-teriyaki" class="good">
 				<input type="checkbox" name="coffee" id="caesar-teriyaki" value="260">
-				<span>Ева / Ролл Цезарь Терияки</span>
+				<span>Ролл Цезарь Терияки</span>
 			</label>
 			<label for="caesar-shrimps" class="good">
 				<input type="checkbox" name="coffee" id="caesar-shrimps" value="295">
-				<span>Ева / Салат цезарь с креветками</span>
+				<span>Салат цезарь с креветками</span>
 			</label>
 			<label for="caesar-chicken" class="good">
 				<input type="checkbox" name="coffee" id="caesar-chicken" value="285">
-				<span>Ева / Салат Цезарь с курицей</span>
+				<span>Салат Цезарь с курицей</span>
 			</label>
 		</div>
 		<hr>
@@ -143,11 +144,11 @@
 			<button onclick="updateDebet()">Добавить БЕЗНАЛ</button>
 		</div>
 		<h2>Сумма:</h2>
-		<span>Наличный рассчет: </span><span id="cash">0 руб.</span><br>
-		<span>Безаличный рассчет: </span><span id="debet">0 руб.</span><br>
-		<span>ИТОГО: </span><span id="overall">0 руб.</span>
+		<span>Наличный рассчет: </span><span id="cash">0₽</span><br>
+		<span>Безаличный рассчет: </span><span id="debet">0₽</span><br>
+		<span>ИТОГО: </span><span id="overall">0₽</span>
 		<h2>Список купленного:</h2>
-		<span id="sold"></span>
+		<span style="display: grid; grid-template-columns: 1fr 1fr;l" id="sold"></span>
 	</main>
 	<br><br><br><br>
 </div>

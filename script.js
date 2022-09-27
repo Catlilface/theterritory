@@ -1,6 +1,8 @@
 var list = []
 var cash = []
 var debet = []
+var ids = []
+var id = 1
 
 function updateCash() {
 	let sumA = 0
@@ -9,17 +11,18 @@ function updateCash() {
 		if (e.checked) {
 			e.checked = false
 			cash.push(parseInt(e.value))
-			list.push(e.id)
+			list.push(id + ') ' + e.id + ' ' + e.value + 'Н')
+			id++
 		}
 	}
 	for (p of cash) {
 		sumA += p		
 	}
-	document.getElementById('cash').innerHTML = sumA + 'руб.'
+	document.getElementById('cash').innerHTML = sumA + '₽'
 	for (p of debet) {
 		sumB += p
 	}
-	document.getElementById('overall').innerHTML = sumA + sumB + 'руб.'
+	document.getElementById('overall').innerHTML = sumA + sumB + '₽'
 	callList()
 }
 
@@ -30,17 +33,18 @@ function updateDebet() {
 		if (e.checked) {
 			e.checked = false
 			debet.push(parseInt(e.value))
-			list.push(e.id)
+			list.push(id + ') ' + e.id + ' ' + e.value + 'Б')
+			id++
 		}
 	}
 	for (p of debet) {
 		sumA += p		
 	}
-	document.getElementById('debet').innerHTML = sumA + 'руб.'
+	document.getElementById('debet').innerHTML = sumA + '₽'
 	for (p of cash) {
 		sumB += p
 	}
-	document.getElementById('overall').innerHTML = sumA + sumB + 'руб.'
+	document.getElementById('overall').innerHTML = sumA + sumB + '₽'
 	callList()
 }
 
